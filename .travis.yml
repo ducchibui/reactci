@@ -11,10 +11,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "Reactci"
-  env: "Reactci-env"
+  app: "reactci"
+  env: "reactci-env"
   bucket_name: elasticbeanstalk-us-east-2-302449236375
-  bucket_path: "Reactci"
+  bucket_path: "reactci"
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
