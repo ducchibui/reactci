@@ -1,0 +1,9 @@
+sudo: required
+service:
+  - docker
+
+before_install:
+  - docker build -t ducchibui/reactci -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true ducchibui/reactci npm run test
