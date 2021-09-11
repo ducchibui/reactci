@@ -8,8 +8,15 @@ before_install:
 script:
   - docker run -e CI=true ducchibui/reactci npm run test
 
-  deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: Reactci
-    env: "Reactci-env"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "Reactci"
+  env: "Reactci-env"
+  bucket_name: elasticbeanstalk-us-east-2-302449236375
+  bucket_path: "Reactci"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: ""$AWS_SECRET_KEY"
